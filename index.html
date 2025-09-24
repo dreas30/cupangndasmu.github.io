@@ -8,74 +8,81 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      height: 100vh;
+      background: linear-gradient(to bottom, #d16ba5, #ff9a8b, #f9d976, #f39f86);
       display: flex;
       justify-content: center;
       align-items: center;
-      /* fallback warna gradasi */
-      background: linear-gradient(to bottom, #d16ba5, #fbb03b);
-      background-size: cover;
-      background-position: center;
+      height: 100vh;
     }
-
-    body.bg-image {
-      background-image: url('background.jpg');
-    }
-
     .container {
-      text-align: center;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 350px;
     }
-
     .logo {
       width: 120px;
-      border-radius: 50%;
-      margin-bottom: 20px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 15px;
     }
-
     h1 {
-      margin-bottom: 20px;
+      margin: 10px 0 5px 0;
       color: #333;
     }
-
-    .link {
+    .tagline {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .divider {
+      width: 60%;
+      height: 2px;
+      background: linear-gradient(to right, #ff512f, #dd2476);
+      margin: 15px auto;
+      border-radius: 2px;
+    }
+    .button {
       display: block;
       margin: 10px auto;
       padding: 12px;
-      width: 220px;
-      background: #ff6f61;
+      background: #ff4d4d;
       color: white;
       text-decoration: none;
       border-radius: 25px;
       font-weight: bold;
-      transition: 0.3s;
+      transition: transform 0.2s, background 0.3s;
     }
-
-    .link:hover {
-      background: #ff3b2f;
+    .button:hover {
+      transform: scale(1.05);
+      background: #e60000;
+    }
+    .footer-icon {
+      margin-top: 20px;
+      font-size: 30px;
+      color: #ff4d4d;
+      animation: float 2s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="logo.png" alt="Logo Cupang Ndasmu" class="logo" onerror="this.style.display='none'">
+    <img src="logo.png" alt="Logo Cupang Ndasmu" class="logo">
     <h1>Cupang Ndasmu</h1>
-    <a class="link" href="https://wa.me/qr/4VVPHAY3ZU34H1" target="_blank">WhatsApp</a>
-    <a class="link" href="https://www.tiktok.com/@cupang.ndasmu?_t=ZS-8zzVw6Eaoon&_r=1" target="_blank">TikTok</a>
-    <a class="link" href="https://www.instagram.com/cupang.ndasmu?utm_source=qr&igsh=OTN1ODJ6ZGM4YjB5" target="_blank">Instagram</a>
-    <a class="link" href="https://id.shp.ee/L65SEap" target="_blank">Shopee</a>
+    <p class="tagline">Ndas ngelu? tuku cupang solusinya!</p>
+    <div class="divider"></div>
+    <a href="https://wa.me/628xxxx" class="button">WhatsApp</a>
+    <a href="https://www.tiktok.com/@cupang.ndasmu" class="button">TikTok</a>
+    <a href="https://instagram.com/username" class="button">Instagram</a>
+    <a href="https://shopee.co.id/username" class="button">Shopee</a>
+    <div class="footer-icon">🐟</div>
   </div>
-
-  <script>
-    // cek apakah gambar background ada
-    const img = new Image();
-    img.src = "background.jpg";
-    img.onload = function () {
-      document.body.classList.add("bg-image");
-    };
-  </script>
 </body>
 </html>
