@@ -1,97 +1,191 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cupang Ndasmu</title>
+
+  <!-- Poppins font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #7b2ff7, #f107a3, #fdbb2d);
-      color: white;
-      text-align: center;
+    :root{
+      --card-bg: rgba(255,255,255,0.95);
+      --accent-1: #7b2ff7; /* ungu */
+      --accent-2: #ff7a4a; /* oranye/peach */
+      --btn-gradient: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(0,0,0,0.08));
     }
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      color:#111;
+      background:
+        linear-gradient(180deg, rgba(123,47,247,0.85) 0%, rgba(255,106,0,0.85) 100%),
+        url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
     }
-    .logo {
-      width: 150px;
-      margin: 20px auto;
+
+    /* container card */
+    .card{
+      width:100%;
+      max-width:420px;
+      background:var(--card-bg);
+      border-radius:18px;
+      padding:28px 24px;
+      box-shadow: 0 18px 40px rgba(9,10,21,0.18);
+      text-align:center;
+      box-sizing:border-box;
+      position:relative;
     }
-    h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
+
+    /* logo */
+    .logo{
+      width:150px;
+      height:150px;
+      object-fit:contain;
+      border-radius:12px;
+      display:block;
+      margin: 0 auto 14px;
+      background: transparent;
     }
-    p {
-      font-size: 16px;
-      margin-bottom: 30px;
+
+    h1{
+      margin:10px 0 8px;
+      font-size:34px;
+      line-height:1;
+      letter-spacing: 0.5px;
+      color:#222;
+      font-weight:700;
     }
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 10px;
-      background: rgba(0,0,0,0.3);
-      padding: 12px 20px;
-      border-radius: 30px;
-      margin: 12px 0;
-      text-decoration: none;
-      color: white;
-      font-size: 16px;
-      transition: 0.3s;
+
+    .tagline{
+      margin:0 auto 18px;
+      color:#555;
+      font-size:18px;
+      max-width:320px;
+      font-weight:500;
     }
-    .btn:hover {
-      background: rgba(255,255,255,0.2);
+
+    /* buttons style similar to design */
+    .links {
+      display:block;
+      margin-top:6px;
     }
-    .btn img {
-      width: 28px;
-      height: 28px;
+
+    .link {
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:14px 18px;
+      margin:12px 0;
+      border-radius:36px;
+      text-decoration:none;
+      color:#fff;
+      background: var(--btn-gradient);
+      justify-content:flex-start;
+      box-shadow: inset 8px 8px 18px rgba(255,255,255,0.04), 0 6px 18px rgba(13,14,20,0.06);
+      transition: transform .16s ease, box-shadow .16s ease;
     }
-    .footer {
-      margin-top: 30px;
-      font-size: 14px;
-      opacity: 0.9;
+
+    .link:hover{ transform: translateY(-4px); box-shadow: 0 14px 30px rgba(13,14,20,0.12); }
+    .link img.icon { width:44px; height:44px; border-radius:50%; object-fit:cover; }
+    .link .text { flex:1; text-align:left; font-size:18px; font-weight:600; color:#fff; }
+    .link .dots { width:18px; text-align:center; color: rgba(255,255,255,0.9); font-weight:700; }
+
+    /* subtle overlay gradient for the circular left area like your design */
+    .link::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 62%;
+      height: 100%;
+      border-radius: 36px;
+      transform: translateX(-6px);
+      background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+      z-index:0;
+      pointer-events:none;
     }
+    .link > * { position: relative; z-index:1; } /* keep children above ::before */
+
+    /* location text */
+    .location {
+      margin-top:18px;
+      color:#444;
+      font-weight:600;
+      font-size:14px;
+      display:block;
+    }
+
+    /* responsive */
+    @media (max-width:420px){
+      h1{ font-size:30px; }
+      .tagline { font-size:16px; }
+      .link img.icon { width:40px; height:40px; }
+    }
+
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="logo.png" alt="Logo Cupang Ndasmu" class="logo">
-    <h1>CUPANG NDASMU</h1>
-    <p>Ndas mumet? tuku Cupang solusinya</p>
+  <main class="card" role="main" aria-labelledby="site-title">
+    <!-- logo.png harus ada di root repo -->
+    <img src="logo.png" alt="Logo Cupang Ndasmu" class="logo" onerror="this.style.display='none'">
 
-    <!-- TikTok -->
-    <a href="https://www.tiktok.com/@cupang.ndasmu?_t=ZS-8zzVw6Eaoon&_r=1" class="btn" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/TikTok_logo.svg" alt="TikTok">
-      Cupang Ndasmu
-    </a>
+    <h1 id="site-title">CUPANG NDASMU</h1>
+    <p class="tagline">Ndas ngelu? tuku cupang solusinya!</p>
 
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/cupang.ndasmu?utm_source=qr&igsh=OTN1ODJ6ZGM4YjB5" class="btn" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-      Cupang Ndasmu
-    </a>
+    <nav class="links" aria-label="Link ke sosial & toko">
+      <!-- TikTok -->
+      <a class="link" href="https://www.tiktok.com/@cupang.ndasmu?_t=ZS-8zzVw6Eaoon&_r=1" target="_blank" rel="noopener noreferrer">
+        <img class="icon" src="tiktok.png" alt="TikTok" onerror="this.style.display='none'">
+        <span class="text">Cupang Ndasmu</span>
+        <span class="dots">⋮</span>
+      </a>
 
-    <!-- WhatsApp -->
-    <a href="https://wa.me/qr/4VVPHAY3ZU34H1" class="btn" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-      Cupang Ndasmu
-    </a>
+      <!-- Instagram -->
+      <a class="link" href="https://www.instagram.com/cupang.ndasmu?utm_source=qr&igsh=OTN1ODJ6ZGM4YjB5" target="_blank" rel="noopener noreferrer">
+        <img class="icon" src="instagram.png" alt="Instagram" onerror="this.style.display='none'">
+        <span class="text">Cupang Ndasmu</span>
+        <span class="dots">⋮</span>
+      </a>
 
-    <!-- Shopee -->
-    <a href="https://id.shp.ee/L65SEap" class="btn" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Shopee_logo.svg" alt="Shopee">
-      Cupang Ndasmu
-    </a>
+      <!-- WhatsApp (QR link) -->
+      <a class="link" href="https://wa.me/qr/4VVPHAY3ZU34H1" target="_blank" rel="noopener noreferrer">
+        <img class="icon" src="whatsapp.png" alt="WhatsApp" onerror="this.style.display='none'">
+        <span class="text">Cupang Ndasmu</span>
+        <span class="dots">⋮</span>
+      </a>
 
-    <!-- Footer -->
-    <div class="footer">
-      Jawa Timur, Surabaya
-    </div>
-  </div>
+      <!-- Shopee -->
+      <a class="link" href="https://id.shp.ee/L65SEap" target="_blank" rel="noopener noreferrer">
+        <img class="icon" src="shopee.png" alt="Shopee" onerror="this.style.display='none'">
+        <span class="text">Cupang Ndasmu</span>
+        <span class="dots">⋮</span>
+      </a>
+    </nav>
+
+    <span class="location">📍 Jawa Timur, Surabaya</span>
+  </main>
+
+  <script>
+    // safety: if background.jpg tidak ada, CSS gradient tetap tampil karena url() gagal gracefully.
+    // tambahan: jika ingin memastikan gambar latar terpakai hanya kalau ada, uncomment dan pakai pengecekan JS:
+    /*
+    (function(){
+      const img = new Image();
+      img.src = 'background.jpg';
+      img.onload = () => { document.body.style.backgroundImage = 'linear-gradient(180deg, rgba(123,47,247,0.6), rgba(255,106,0,0.6)), url("background.jpg")'; };
+    })();
+    */
+  </script>
 </body>
 </html>
