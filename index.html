@@ -1,61 +1,81 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cupang Ndasmu</title>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* fallback warna gradasi */
+      background: linear-gradient(to bottom, #d16ba5, #fbb03b);
+      background-size: cover;
+      background-position: center;
     }
+
+    body.bg-image {
+      background-image: url('background.jpg');
+    }
+
     .container {
-      margin-top: 80px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
+
     .logo {
       width: 120px;
-      height: 120px;
       border-radius: 50%;
       margin-bottom: 20px;
     }
+
     h1 {
-      font-size: 28px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      color: #333;
     }
+
     .link {
       display: block;
-      margin: 15px auto;
-      padding: 14px 20px;
+      margin: 10px auto;
+      padding: 12px;
       width: 220px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      background: rgba(255, 255, 255, 0.2);
+      background: #ff6f61;
       color: white;
-      border: 2px solid white;
-      transition: all 0.3s ease;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s;
     }
+
     .link:hover {
-      background: white;
-      color: #333;
+      background: #ff3b2f;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="logo.png" alt="Logo Cupang Ndasmu" class="logo">
+    <img src="logo.png" alt="Logo Cupang Ndasmu" class="logo" onerror="this.style.display='none'">
     <h1>Cupang Ndasmu</h1>
-    
     <a class="link" href="https://wa.me/qr/4VVPHAY3ZU34H1" target="_blank">WhatsApp</a>
     <a class="link" href="https://www.tiktok.com/@cupang.ndasmu?_t=ZS-8zzVw6Eaoon&_r=1" target="_blank">TikTok</a>
     <a class="link" href="https://www.instagram.com/cupang.ndasmu?utm_source=qr&igsh=OTN1ODJ6ZGM4YjB5" target="_blank">Instagram</a>
     <a class="link" href="https://id.shp.ee/L65SEap" target="_blank">Shopee</a>
   </div>
+
+  <script>
+    // cek apakah gambar background ada
+    const img = new Image();
+    img.src = "background.jpg";
+    img.onload = function () {
+      document.body.classList.add("bg-image");
+    };
+  </script>
 </body>
 </html>
