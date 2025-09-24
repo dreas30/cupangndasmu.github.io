@@ -1,66 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cupang Ndasmu</title>
   <style>
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, #6a11cb, #ff6a00);
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #7b2ff7, #f107a3, #fdbb2d);
       color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
       text-align: center;
-      padding: 20px;
     }
     .container {
       max-width: 400px;
-      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
     }
     .logo {
       width: 150px;
-      height: 150px;
-      object-fit: contain;
-      border-radius: 12px;
-      margin-bottom: 15px;
+      margin: 20px auto;
     }
     h1 {
-      font-size: 28px;
-      font-weight: bold;
-      margin: 10px 0 5px 0;
+      font-size: 24px;
+      margin-bottom: 10px;
     }
-    .tagline {
+    p {
       font-size: 16px;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
-    .button {
+    .btn {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      gap: 15px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
-      margin: 12px 0;
-      padding: 12px 18px;
+      gap: 10px;
+      background: rgba(0,0,0,0.3);
+      padding: 12px 20px;
       border-radius: 30px;
-      color: white;
+      margin: 12px 0;
       text-decoration: none;
+      color: white;
       font-size: 16px;
-      transition: transform 0.2s ease, background 0.3s ease;
+      transition: 0.3s;
     }
-    .button:hover {
-      transform: translateY(-3px);
-      background: rgba(255,255,255,0.25);
+    .btn:hover {
+      background: rgba(255,255,255,0.2);
     }
-    .button img {
+    .btn img {
       width: 28px;
       height: 28px;
     }
-    .location {
-      margin-top: 25px;
+    .footer {
+      margin-top: 30px;
       font-size: 14px;
       opacity: 0.9;
     }
@@ -70,22 +62,36 @@
   <div class="container">
     <img src="logo.png" alt="Logo Cupang Ndasmu" class="logo">
     <h1>CUPANG NDASMU</h1>
-    <p class="tagline">Ndas mumet? tuku Cupang solusinya</p>
+    <p>Ndas mumet? tuku Cupang solusinya</p>
 
-    <a href="https://www.tiktok.com/@cupang.ndasmu" class="button">
-      <img src="tiktok.png" alt="TikTok"> Cupang Ndasmu
-    </a>
-    <a href="https://instagram.com/username" class="button">
-      <img src="instagram.png" alt="Instagram"> Cupang Ndasmu
-    </a>
-    <a href="https://wa.me/628xxxx" class="button">
-      <img src="whatsapp.png" alt="WhatsApp"> Cupang Ndasmu
-    </a>
-    <a href="https://shopee.co.id/username" class="button">
-      <img src="shopee.png" alt="Shopee"> Cupang Ndasmu
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@cupang.ndasmu?_t=ZS-8zzVw6Eaoon&_r=1" class="btn" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/TikTok_logo.svg" alt="TikTok">
+      Cupang Ndasmu
     </a>
 
-    <p class="location">📍 Jawa Timur, Surabaya</p>
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/cupang.ndasmu?utm_source=qr&igsh=OTN1ODJ6ZGM4YjB5" class="btn" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      Cupang Ndasmu
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/qr/4VVPHAY3ZU34H1" class="btn" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      Cupang Ndasmu
+    </a>
+
+    <!-- Shopee -->
+    <a href="https://id.shp.ee/L65SEap" class="btn" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Shopee_logo.svg" alt="Shopee">
+      Cupang Ndasmu
+    </a>
+
+    <!-- Footer -->
+    <div class="footer">
+      Jawa Timur, Surabaya
+    </div>
   </div>
 </body>
 </html>
